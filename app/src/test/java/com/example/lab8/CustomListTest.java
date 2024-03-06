@@ -37,6 +37,15 @@ public class CustomListTest {
     public void addCity(City city){
 
         /*
+          this adds a city object to the list
+         the second phase, you can add the
+         city * @param city
+         */
+        public void addCity(City city){
+            cities.add(city);
+        }
+
+        /*
           get the size of the list
           increase the list by adding a new city
           check if our current size matches the initial size
