@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 //import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
@@ -41,9 +41,10 @@ public class CustomListTest {
          the second phase, you can add the
          city * @param city
          */
-        public void addCity(City city){
             cities.add(city);
-        }
+
+
+    }
 
         /*
           get the size of the list
@@ -51,15 +52,14 @@ public class CustomListTest {
           check if our current size matches the initial size
          plus one
          */
-        @Test
-        public void addCityTest(){
-            list = MockCityList();
-            int listSize = list.getCount();
-            list.addCity(new City("Estevan", "SK"));
-            assertEquals(list.getCount(),listSize + 1);
-        }
-    }
 
+@Test
+    public void addCityTest(){
+        list = MockCityList();
+        int listSize = list.getCount();
+        list.addCity(new City("Estevan", "SK"));
+        assertEquals(list.getCount(),listSize + 1);
+    }
 
 
 
