@@ -9,8 +9,12 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomListTest {
+
+    private final List<City> cities = new ArrayList<>();
+    
     /**
      * this gets size of the list
      * return
@@ -27,6 +31,21 @@ public class CustomListTest {
     public CustomList MockCityList(){
         list = new CustomList(null,new ArrayList<>());
         return list;
+    }
+
+         /*
+          get the size of the list
+          increase the list by adding a new city
+          check if our current size matches the initial size
+         plus one
+         */
+
+    @Test
+    public void addCityTest(){
+        list = MockCityList();
+        int listSize = list.getCount();
+        list.addCity(new City("Estevan", "SK"));
+        assertEquals(list.getCount(),listSize + 1);
     }
 
     /**
@@ -46,20 +65,7 @@ public class CustomListTest {
 
     }
 
-        /*
-          get the size of the list
-          increase the list by adding a new city
-          check if our current size matches the initial size
-         plus one
-         */
 
-@Test
-    public void addCityTest(){
-        list = MockCityList();
-        int listSize = list.getCount();
-        list.addCity(new City("Estevan", "SK"));
-        assertEquals(list.getCount(),listSize + 1);
-    }
 
 
 
